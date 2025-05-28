@@ -39,15 +39,6 @@ mongoose
     process.exit(1)
   })
 
-// Ruta para obtener el código de Arduino (opcional)
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const arduinoCodePath = path.join(__dirname, "arduino_code.ino")
-const arduinoCode = `// Código omitido (ya no se usa)`
-fs.writeFileSync(arduinoCodePath, arduinoCode)
-
-app.get("/api/arduino-code", (req, res) => {
-  res.send(arduinoCode)
-})
 
 // Ruta para obtener registros
 app.get("/api/button-presses", async (req, res) => {
